@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore NASA's Astronomy Picture of the Day using the NASA Open API.">
+  <title>NASA Space Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-icon">✦</div>
+      <div>
+        <span>NASA</span>
+        <small>SPACE EXPLORER</small>
+      </div>
+    </div>
+    <a href="https://api.nasa.gov/" target="_blank" rel="noopener">NASA API ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">ASTRONOMY PICTURE OF THE DAY</p>
+      <h1>Explore the universe,<br><span>one day at a time.</span></h1>
+      <p class="hero-text">
+        Discover extraordinary images and videos from NASA, with stories and scientific
+        explanations delivered directly through the NASA Open API.
+      </p>
+      <div class="controls">
+        <label>
+          <span>Select a date</span>
+          <input type="date" id="dateInput">
+        </label>
+        <button id="loadDateBtn">Explore Date</button>
+        <button id="randomBtn" class="secondary">Random Day</button>
+      </div>
+    </section>
+
+    <section id="status" class="status hidden"></section>
+
+    <section id="apodCard" class="apod-card hidden">
+      <div class="media-wrap">
+        <img id="apodImage" alt="NASA Astronomy Picture of the Day">
+        <iframe id="apodVideo" title="NASA Astronomy Picture of the Day video" allowfullscreen></iframe>
+      </div>
+
+      <div class="content">
+        <div class="meta">
+          <span id="apodDate"></span>
+          <span class="dot">•</span>
+          <span id="mediaType"></span>
+        </div>
+        <h2 id="apodTitle"></h2>
+        <p id="apodExplanation"></p>
+
+        <div class="actions">
+          <a id="openMedia" class="button" target="_blank" rel="noopener">Open Original ↗</a>
+          <button id="todayBtn" class="button outline">Today's APOD</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article>
+        <span class="number">01</span>
+        <h3>NASA APOD</h3>
+        <p>NASA publishes a new astronomy image or video every day with an explanation from professional astronomers.</p>
+      </article>
+      <article>
+        <span class="number">02</span>
+        <h3>Explore History</h3>
+        <p>Use the date picker to travel through NASA's archive and discover older space images.</p>
+      </article>
+      <article>
+        <span class="number">03</span>
+        <h3>Powered by API</h3>
+        <p>This website fetches live data from NASA's public API using JavaScript and the Fetch API.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>NASA Space Explorer · Built with HTML, CSS & JavaScript</p>
+    <p>Data provided by NASA Open APIs</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
